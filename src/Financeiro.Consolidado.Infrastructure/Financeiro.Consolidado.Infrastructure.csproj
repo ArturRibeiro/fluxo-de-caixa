@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Common.props"/>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(EntityFrameworkCore)"/>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(EntityFrameworkCorePostgreSQL)"/>
+        <PackageReference Include="MassTransit" Version="8.5.5" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.5" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Financeiro.Consolidado.Command.Queries\Financeiro.Consolidado.Command.Queries.csproj" />
+      <ProjectReference Include="..\Financeiro.Consolidado.Commands\Financeiro.Consolidado.Commands.csproj" />
+      <ProjectReference Include="..\Financeiro.Consolidado.Domain\Financeiro.Consolidado.Domain.csproj" />
+    </ItemGroup>
+</Project>

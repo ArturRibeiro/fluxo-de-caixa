@@ -1,0 +1,64 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+@using Financeiro.App.Models
+@using Financeiro.App.Services
+@inject MovimentacaoApiService Api
+
+<h3>Nova Movimentação Financeira</h3>
+
+<form></form>
+<EditForm Model="@Model" OnValidSubmit="Salvar" FormName="NovaMovimentacaoForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Valor</label>
+        <InputNumber @bind-Value="Model.Valor" class="form-control" />
+    </div>  
+
+    <div class="mb-3">
+        <label>Tipo</label>
+
+        <InputSelect @bind-Value="Model.Tipo" class="form-select">
+            <option selected>Selecione o Tipo de Movimentação</option>
+            @foreach (var item in Enum.GetValues<TipoMovimentacao>())
+            {
+                <option value="@item">@item</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="mb-3">
+        <label>Descrição</label>
+        <InputText @bind-Value="Model.Descricao" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</EditForm>
+
+@if (Mensagem != null)
+{
+    <div class="alert alert-success mt-3">@Mensagem</div>
+}
+
+@code {
+    [SupplyParameterFromForm]
+    public LancamentoInputModel Model { get; set; } = new();
+    private string? Mensagem;
+    private async Task Salvar()
+    {
+        var sucesso = await Api.RegistrarMovimentacaoAsync(Model);
+
+        if (sucesso)
+        {
+            Mensagem = "Movimentação registrada com sucesso!";
+            Model = new(); // limpar formulário
+        }
+        else
+        {
+            Mensagem = "Erro ao registrar movimentação.";
+        }
+    }
+}

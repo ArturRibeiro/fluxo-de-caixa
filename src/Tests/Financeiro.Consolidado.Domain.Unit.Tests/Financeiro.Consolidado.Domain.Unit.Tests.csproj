@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../../Common.props"/>
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="$(FluentAssertions)" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdk)" />
+        <PackageReference Include="NBuilder" Version="$(NBuilder)" />
+        <PackageReference Include="xunit" Version="$(xUnit)" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Financeiro.Consolidado.Domain\Financeiro.Consolidado.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

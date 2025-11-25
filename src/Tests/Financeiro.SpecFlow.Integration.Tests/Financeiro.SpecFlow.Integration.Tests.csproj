@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../../Common.props"/>
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="$(FluentAssertions)" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(MicrosoftAspNetCoreMvcTesting)" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdk)" />
+        <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="$(SpecFlowPlusLivingDocPlugin)" />
+        <PackageReference Include="SpecFlow.xUnit" Version="$(SpecFlowxUnit)" />
+        <PackageReference Include="Testcontainers.PostgreSql" Version="$(TestcontainersPostgreSql)" />
+        <PackageReference Include="Testcontainers.RabbitMq" Version="4.9.0" />
+        <PackageReference Include="xunit" Version="$(xUnit)" />
+        <PackageReference Include="Testcontainers.PostgreSql" Version="$(TestcontainersPostgreSql)" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="appsettings.test.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Financeiro.Web.Api\Financeiro.Web.Api.csproj" />
+    </ItemGroup>
+</Project>

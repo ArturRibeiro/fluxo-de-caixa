@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Common.props"/>
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="$(MediatR)"/>
+    </ItemGroup>
+</Project>

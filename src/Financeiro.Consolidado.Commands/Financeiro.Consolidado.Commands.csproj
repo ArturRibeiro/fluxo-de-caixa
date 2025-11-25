@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Common.props"/>
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="$(MediatR)"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Financeiro.Consolidado.Domain\Financeiro.Consolidado.Domain.csproj" />
+      <ProjectReference Include="..\Financeiro.Domain\Financeiro.Domain.csproj" />
+    </ItemGroup>
+</Project>

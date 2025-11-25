@@ -1,0 +1,13 @@
+global using System.Net;
+global using System.Text;
+global using System.Text.Json;
+global using Financeiro.Application.Commands.Movimentacoes;
+global using Financeiro.Infrastructure;
+global using Financeiro.SpecFlow.Integration.Tests.Hooks;
+global using FluentAssertions;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using TechTalk.SpecFlow;
+global using Xunit;

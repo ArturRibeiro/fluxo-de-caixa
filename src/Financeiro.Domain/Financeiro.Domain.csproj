@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../../Common.props"/>
+    <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="$(FluentValidation)" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Financeiro.Shared\Financeiro.Shared.csproj" />
+    </ItemGroup>
+</Project>

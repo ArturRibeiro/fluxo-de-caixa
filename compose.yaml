@@ -1,0 +1,63 @@
+﻿services:
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: rabbitmq_lancamentos
+    hostname: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - default
+
+  postgres:
+    image: postgres:16
+    container_name: db_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: lancamentos
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - default
+  
+  postgres_consolidados:
+    image: postgres:16
+    container_name: db_postgres_consolidados
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: consolidados
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      - 5433:5432
+    volumes:
+      - postgres_consolidados_data:/var/lib/postgresql/data
+    networks:
+      - default
+
+volumes:
+  postgres_data:
+  rabbitmq_data:
+  postgres_consolidados_data:
+
+networks:
+  default:
+  
+
+
+
+

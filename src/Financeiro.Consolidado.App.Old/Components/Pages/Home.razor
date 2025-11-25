@@ -1,0 +1,67 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+<h3>Consolidado Diário</h3>
+<div class="w-50">
+    <table class="table">
+        <thead>
+        @* <tr> *@
+        @*     <td>Pesquisa por data:</td> *@
+        @*     <td> *@
+        @*         <form> *@
+        @*             <InputSelect @bind-Value="DataSelecionada" class="form-select"> *@
+        @*                 @foreach (var data in DatasRetroativas) *@
+        @*                 { *@
+        @*                     <option value="@data">@data.ToString("dd/MM/yyyy")</option> *@
+        @*                 } *@
+        @*             </InputSelect> *@
+        @*             <button class="btn btn-primary" type="submit">Salvar</button> *@
+        @*         </form> *@
+        @*     </td> *@
+        @* </tr> *@
+        <tr>
+            <td class="w-25" style="text-align: right;font-weight:bold;">Saldo:</td>
+            <td>@Consolidado.Saldo.ToString("C")</td>
+        </tr>
+        <tr>
+            <td style="text-align: right;font-weight:bold;">Total Entrada:</td>
+            <td>@Consolidado.TotaEntrada.ToString("C")</td>
+        </tr>
+        <tr>
+            <td style="text-align: right;font-weight:bold;">Total Saída:</td>
+            <td>@Consolidado.TotalSaida.ToString("C")</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="w-25">Valor</th>
+            <th>Descrição</th>
+            <th class="w-20">Operação</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var det in Consolidado.ConsolidadoDetalheModels)
+        {
+            <tr>
+                <td>@det.Valor.ToString("C")</td>
+                <td>@det.Descricao</td>
+                <td>@det.Tipo</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    setInterval(() => {
+        location.reload();
+    }, 5000);
+</script>

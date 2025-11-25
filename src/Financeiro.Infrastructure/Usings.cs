@@ -1,0 +1,36 @@
+// Global using directives
+
+global using System.Text;
+global using System.Text.Json;
+global using Financeiro.Application.Commands;
+global using Financeiro.Application.Commands.DependencyInjection;
+global using Financeiro.Domain.Movimentacoes;
+global using Financeiro.Domain.Movimentacoes.Interfaces;
+global using Financeiro.Infrastructure.BackgroundServices;
+global using Financeiro.Infrastructure.BackgroundServices.DependencyInjection;
+global using Financeiro.Infrastructure.EventSourcing;
+global using Financeiro.Infrastructure.EventSourcing.DependencyInjection;
+global using Financeiro.Infrastructure.EventSourcing.EventStore;
+global using Financeiro.Infrastructure.EventSourcing.EventStore.Imp;
+global using Financeiro.Infrastructure.EventSourcing.Serializers;
+global using Financeiro.Infrastructure.EventSourcing.Serializers.Imp;
+global using Financeiro.Infrastructure.EventSourcing.TypeResolvers;
+global using Financeiro.Infrastructure.EventSourcing.TypeResolvers.Imp;
+global using Financeiro.Infrastructure.Messaging;
+global using Financeiro.Infrastructure.Messaging.DependencyInjection;
+global using Financeiro.Infrastructure.Repositorys;
+global using Financeiro.Shared;
+global using Financeiro.Shared.Contracts;
+global using Financeiro.Shared.DomainEvents;
+global using Financeiro.Shared.Messaging;
+global using MassTransit;
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Logging;
+global using Quartz;
+global using RabbitMQ.Client;
